@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/"
-  to = "/pages/csatorna.html"
-  status = 301
+  to = "/HTML/csatorna.html"
+  status = 200
