@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#10110f">
+    <meta name="description" content="Oszd meg egy új filmedet vagy add hozzá a forgatáson használt felszerelést.">
+    <link rel="stylesheet" href="../css/csatorna.css">
+    <script src="../js/csatorna.js" defer></script>
+    <title>Beküldés — EMBIK</title>
+</head>
+<body class="submit-page">
+    <a class="skip-link" href="#tartalom">Ugrás a tartalomra</a>
+    <header class="site-header">
+        <a class="brand" href="csatorna.html" aria-label="EMBIK főoldal">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span>EMBIK</span>
+        </a>
+        <a class="text-link back-link" href="csatorna.html">← Vissza a főoldalra</a>
+    </header>
+    <main class="submit-main section-wrap" id="tartalom">
+        <p class="eyebrow">KÖZÖSEN TÖBBET ALKOTUNK</p>
+        <h1>Hozd be a <span>következő ötletet.</span></h1>
+        <p class="submit-lead">Oszd meg a filmedet. A beküldések ezen a böngészőn tárolódnak.</p>
+        <div class="storage-note"><span aria-hidden="true">ⓘ</span> Ez a bemutató szerver nélkül működik: az adatok ezen az eszközön maradnak, más látogatók nem látják őket. Publikus feltöltéshez szerveres tárhely és adatbázis szükséges.</div>
+
+        <section class="form-panel" aria-labelledby="project-form-title">
+            <div class="form-section-heading"><span class="form-step">01</span><div><p class="eyebrow">MUTASD MEG A MUNKÁD</p><h2 id="project-form-title">Új projekt</h2></div></div>
+            <form id="project-form">
+                <div class="form-grid">
+                    <div class="form-field"><label for="project-title">Projekt címe <span>*</span></label><input id="project-title" name="title" type="text" maxlength="80" required placeholder="Pl. Balaton körüli kaland"></div>
+                    <div class="form-field"><label for="project-category">Kategória <span>*</span></label><select id="project-category" name="category" required><option value="">Válassz kategóriát</option><option value="vlog">Vlog / utazás</option><option value="tura">Túra / kirándulás</option><option value="gaming">Gaming</option></select></div>
+                    <div class="form-field form-field-full"><label for="project-description">Rövid leírás <span>*</span></label><textarea id="project-description" name="description" rows="3" maxlength="240" required placeholder="Miről szól a projekt?"></textarea></div>
+                    <div class="form-field form-field-full"><label for="project-url">YouTube-videó linkje <span>*</span></label><input id="project-url" name="videoUrl" type="url" required placeholder="https://www.youtube.com/watch?v=..."><small>A videót a YouTube-on tárold, ide a nyilvános videó linkjét illeszd be.</small></div>
+                    <div class="form-field form-field-full"><label for="project-image">Borítókép <span class="optional">(nem kötelező)</span></label><input id="project-image" name="image" type="file" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG vagy WebP · legfeljebb 5 MB</small></div>
+                </div>
+                <button class="button button-primary" type="submit">Projekt mentése <span aria-hidden="true">↗</span></button>
+                <p class="form-status" id="project-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="form-panel gear-form-panel" id="felszereles-form" aria-labelledby="gear-form-title" hidden>
+            <div class="form-section-heading"><span class="form-step">02</span><div><p class="eyebrow">MIT HASZNÁLTOK?</p><h2 id="gear-form-title">Felszerelés hozzáadása</h2></div></div>
+            <form id="gear-form">
+                <div class="form-grid">
+                    <div class="form-field"><label for="gear-name">Eszköz neve <span>*</span></label><input id="gear-name" name="name" type="text" maxlength="80" required placeholder="Pl. Sony FX3"></div>
+                    <div class="form-field"><label for="gear-category">Kategória <span>*</span></label><select id="gear-category" name="category" required><option value="">Válassz kategóriát</option><option>Kamera</option><option>Objektív</option><option>Hang</option><option>Fény</option><option>Stabilizátor</option><option>Kiegészítő</option></select></div>
+                    <div class="form-field form-field-full"><label for="gear-description">Miért szeretitek? <span>*</span></label><textarea id="gear-description" name="description" rows="3" maxlength="240" required placeholder="Rövid tapasztalat vagy felhasználási tipp"></textarea></div>
+                </div>
+                <button class="button button-outline" type="submit">Felszerelés mentése <span aria-hidden="true">↗</span></button>
+                <p class="form-status" id="gear-status" role="status" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <section class="saved-section" aria-labelledby="saved-title">
+            <div class="section-heading"><div><p class="eyebrow">EZEN AZ ESZKÖZÖN</p><h2 id="saved-title">Saját beküldések<span class="accent">.</span></h2></div></div>
+            <div class="saved-list" id="saved-list"><p class="saved-empty">Még nincs saját projekted vagy felszerelésed.</p></div>
+        </section>
+    </main>
+    <footer class="site-footer"><a class="brand" href="csatorna.html"><span class="brand-mark" aria-hidden="true">E</span><span>EMBIK</span></a><p>EMBIK · EMBIK Gaming <span>© <span id="current-year">2025</span> EMBIK</span></p><a class="footer-top" href="#tartalom">Vissza az elejére ↑</a></footer>
+</body>
+</html>
