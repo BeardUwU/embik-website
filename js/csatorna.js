@@ -298,6 +298,26 @@ function setupMobileNavigation() {
     });
 }
 
+function setupRouteMap() {
+    const setActive = (stopId, isActive) => {
+        document.querySelectorAll(`[data-route-stop="${stopId}"], [data-map-stop="${stopId}"]`).forEach((element) => {
+            element.classList.toggle("is-active", isActive);
+        });
+    };
+    const bindStop = (element, attributeName) => {
+        const stopId = element.dataset[attributeName];
+        if (!stopId) return;
+        element.addEventListener("pointerenter", () => setActive(stopId, true));
+        element.addEventListener("pointerleave", () => setActive(stopId, false));
+        const focusTarget = element.querySelector("a, button, input, select, textarea, [tabindex]") || element;
+        focusTarget?.addEventListener("focus", () => setActive(stopId, true));
+        focusTarget?.addEventListener("blur", () => setActive(stopId, false));
+    };
+
+    document.querySelectorAll("[data-route-stop]").forEach((element) => bindStop(element, "routeStop"));
+    document.querySelectorAll("[data-map-stop]").forEach((element) => bindStop(element, "mapStop"));
+}
+
 function setupAlbumViewer() {
     const dialog = document.querySelector(".album-viewer");
     const viewerImage = dialog?.querySelector(".album-viewer-image");
@@ -355,6 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const year = document.querySelector("#current-year");
     if (year) year.textContent = String(new Date().getFullYear());
     setupMobileNavigation();
+    setupRouteMap();
     setupProjectFilters();
     setupProjectForm();
     setupGearForm();

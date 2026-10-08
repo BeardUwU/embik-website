@@ -1,0 +1,4 @@
+[[redirects]]
+  from = "/"
+  to = "/pages/csatorna.html"
+  status = 301
